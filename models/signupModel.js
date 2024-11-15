@@ -1,4 +1,3 @@
-// models/User.js
 import mongoose from "mongoose";
 
 const signUpUserSchema = new mongoose.Schema({

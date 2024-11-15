@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import DBconnection from './config/DBconnection.js'
 import routes from "./routes/routes.js"
+import cors from "cors"
 
 dotenv.config()
 DBconnection()
@@ -11,6 +12,10 @@ const app = express()
 
 // Middleware to parse JSON
 app.use(express.json());
+
+app.use(cors({
+    origin: "http://localhost:5173/"
+}))
 
 app.use("/api/v1", routes)
 
